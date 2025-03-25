@@ -19,8 +19,8 @@ jobs:
         run: |
           curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash
 
-      - name: Authenticate with New Relic
-        run: newrelic login --apiKey ${{ secrets.NEW_RELIC_API_KEY }}
+      - name: Set API Key as Environment Variable
+        run: echo "NEW_RELIC_API_KEY=${{ secrets.NEW_RELIC_API_KEY }}" >> $GITHUB_ENV
 
       - name: Apply Alert Policies
         run: ./scripts/update_alerts.sh
