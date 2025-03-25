@@ -1,0 +1,8 @@
+common: &default_settings
+  license_key: YOUR_NEW_RELIC_LICENSE_KEY
+  app_name: My Java App
+  log_level: info
+
+development:
+  <<: *default_settings
+  log_level: debug

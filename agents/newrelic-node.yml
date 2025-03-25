@@ -1,0 +1,5 @@
+license_key: YOUR_NEW_RELIC_LICENSE_KEY
+app_name: "My Node.js App"
+logging:
+  level: info
+  filepath: newrelic_agent.log

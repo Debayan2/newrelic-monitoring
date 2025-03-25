@@ -1,0 +1,4 @@
+license_key: YOUR_NEW_RELIC_LICENSE_KEY
+log_file: /var/log/newrelic-infra.log
+custom_attributes:
+  environment: production

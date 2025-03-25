@@ -1,0 +1,11 @@
+{
+    "monitor": {
+      "name": "Website Uptime Check",
+      "type": "SIMPLE",
+      "frequency": 5,
+      "locations": ["AWS_US_WEST_1"],
+      "uri": "https://yourwebsite.com",
+      "status": "ENABLED"
+    }
+  }
+  

@@ -1,0 +1,27 @@
+{
+    "dashboard": {
+      "name": "System Performance",
+      "permissions": "PUBLIC_READ_ONLY",
+      "widgets": [
+        {
+          "title": "CPU Usage",
+          "visualization": "billboard",
+          "data": [
+            {
+              "nrql": "SELECT average(cpuPercent) FROM SystemSample SINCE 30 minutes ago"
+            }
+          ]
+        },
+        {
+          "title": "Memory Usage",
+          "visualization": "billboard",
+          "data": [
+            {
+              "nrql": "SELECT average(memoryUsedPercent) FROM SystemSample SINCE 30 minutes ago"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

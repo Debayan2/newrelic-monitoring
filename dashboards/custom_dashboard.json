@@ -1,0 +1,27 @@
+{
+    "dashboard": {
+      "name": "Custom Application Metrics",
+      "permissions": "PUBLIC_READ_ONLY",
+      "widgets": [
+        {
+          "title": "Response Time",
+          "visualization": "line",
+          "data": [
+            {
+              "nrql": "SELECT average(duration) FROM Transaction WHERE appName = 'MyApp' SINCE 30 minutes ago"
+            }
+          ]
+        },
+        {
+          "title": "Error Rate",
+          "visualization": "billboard",
+          "data": [
+            {
+              "nrql": "SELECT percentage(count(*), WHERE error IS true) FROM Transaction SINCE 30 minutes ago"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

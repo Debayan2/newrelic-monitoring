@@ -1,0 +1,26 @@
+{
+    "policy": {
+      "name": "High Memory Usage Alert",
+      "incident_preference": "PER_CONDITION",
+      "conditions": [
+        {
+          "name": "Memory Usage High",
+          "type": "static",
+          "enabled": true,
+          "nrql": {
+            "query": "SELECT average(memoryUsedPercent) FROM SystemSample",
+            "since_value": "5 minutes ago"
+          },
+          "terms": [
+            {
+              "duration": "5",
+              "operator": "above",
+              "threshold": "90",
+              "priority": "critical"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

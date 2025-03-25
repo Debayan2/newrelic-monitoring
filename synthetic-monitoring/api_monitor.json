@@ -1,0 +1,11 @@
+{
+    "monitor": {
+      "name": "API Endpoint Check",
+      "type": "SCRIPT_API",
+      "frequency": 10,
+      "locations": ["AWS_US_EAST_1"],
+      "script": "var assert = require('assert');\nvar $http = require('request');\n$http.get('https://yourapi.com/health', function (error, response) {\n    assert.equal(response.statusCode, 200);\n});",
+      "status": "ENABLED"
+    }
+  }
+  

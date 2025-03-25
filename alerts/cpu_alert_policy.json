@@ -1,0 +1,26 @@
+{
+    "policy": {
+      "name": "High CPU Usage Alert",
+      "incident_preference": "PER_CONDITION",
+      "conditions": [
+        {
+          "name": "CPU Usage High",
+          "type": "static",
+          "enabled": true,
+          "nrql": {
+            "query": "SELECT average(cpuPercent) FROM SystemSample",
+            "since_value": "5 minutes ago"
+          },
+          "terms": [
+            {
+              "duration": "5",
+              "operator": "above",
+              "threshold": "85",
+              "priority": "critical"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
